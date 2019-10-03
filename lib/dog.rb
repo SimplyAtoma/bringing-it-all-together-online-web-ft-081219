@@ -61,9 +61,9 @@ class Dog
     sql = <<-SQL
     SELECT *
     FROM dogs 
-    WHERE 
+    WHERE name = ?
     SQL
-    Dog.new_from_db(sql)
+    Dog.new_from_db(sql, new_name)
   end 
   
   def update
